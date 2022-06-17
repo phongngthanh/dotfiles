@@ -1,0 +1,8 @@
+{{ if eq .chezmoi.os "darwin" }}
+set-option -g default-shell '/opt/homebrew/bin/fish'
+{{ else if eq .chezmoi.os "linux" }}
+set-option -q default-shell '/usr/bin/fish'
+{{ else }}
+{{ end }}
+# sudo sh -c "grep -qxF '$(which fish)' /etc/shells || echo '$(which fish)' >> /etc/shells"
+# chsh -s $(which fish)
