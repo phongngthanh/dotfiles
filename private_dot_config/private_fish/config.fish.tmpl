@@ -1,0 +1,6 @@
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+    {{ if stat (joinPath .chezmoi.homeDir ".asdf") }}
+    source ~/.asdf/asdf.fish
+    {{ end }}
+end
